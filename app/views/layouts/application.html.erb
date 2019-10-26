@@ -16,6 +16,20 @@
   </head>
 
   <body>
+
+  <div class="navbar navbar-dark bg-dark mb-5">
+  <div class="container">
+    <div class="d-flex justify-content-between w-100">
+      <%= link_to "Australian Beers", root_path, :class => "navbar-brand" %>
+      <%= link_to "New Beer", new_beer_path, :class => "btn btn-ghost"%>
+    </div>
+  </div>
+</div>
+
+
+
     <%= yield %>
   </body>
 </html>
+
+

@@ -1,1 +1,28 @@
-<h1>Hello World</h1>
+<div class="container">
+  <div class="d-flex justify-content-center my-5">
+    <h1>All beers</h1>
+  </div>
+    <div class="cards">
+      <% @beers.each do |beer| %>
+        <%= link_to beer_path(beer), :style => "text-decoration: none" ,:action => 'go' do %>
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= beer.image_url %>)"><%= beer.name %>
+                </div>
+              </div>
+              <div class="flip-card-back">
+                <div class="card-category-back d-flex align-items-center justify-content-center">
+                  <div>
+                    <% beer.number_of_people.each do |numpeep| %>
+                      <p><%= numpeep.description %></p> #- <%= numpeep.ingredient.name %></p>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+</div>

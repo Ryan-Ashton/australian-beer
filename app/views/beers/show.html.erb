@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="d-flex justify-content-center my-5">
+    <h1><%= @beer.name %></h1>
+  </div>
+  	<div class="row d-flex justify-content-center">
+  		<div class="col-4">
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= @beer.photo %>)">
+          </div>	
+  		</div>
+		<div class="col-4 py-5 px-4" id="new-contail-form-container" style="border-radius: 5px;">
+			<% @numofpeople.each do |num| %>
+				<div class="d-flex justify-content-between">
+					<p><%= numofpeople.description %> - <%= numofpeople.ingredient.name %></p>
+					<%= link_to numofpeople_path(numofpeople), method: :delete, data: { confirm: "Are you sure?" } do %>
+						<i class="fa fa-trash" aria-hidden="true"></i>
+					<% end %>
+				</div>
+			    <hr>
+			<% end %>
+			<%= link_to "New ingredient", new_cocktail_dose_path(@beer), :class => "btn btn-ghost2 mt-4"%>
+		</div>
+	</div>
+</div>
