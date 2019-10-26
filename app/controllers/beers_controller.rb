@@ -1,6 +1,6 @@
 class BeersController < ApplicationController
 
-  before_action :set_beer, only [:show]
+  before_action :set_beer, only: [:show]
 
   def index
     @beers = Beer.all
@@ -20,6 +20,7 @@ class BeersController < ApplicationController
       redirect_to beer_path(@beer)
     else
       render "new"
+    end
   end
 
   private
